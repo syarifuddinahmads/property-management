@@ -5,17 +5,30 @@
  */
 package main;
 
+import controllers.MainController;
+import data.Data;
+import views.LoginView;
+
 /**
  *
  * @author udin
  */
 public class TugasAkhirPraktikumPBO {
 
+    static MainController mainController = new MainController();
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        mainController.injectDataUser();
+        boolean statusLogin = Data.isLoggedIn;
+        if (statusLogin) {
+            mainController.mainView();
+        } else {
+//            mainController.loginView();
+            mainController.staffView();
+        }
     }
-    
+
 }

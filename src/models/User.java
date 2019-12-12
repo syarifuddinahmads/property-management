@@ -14,13 +14,31 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private String nama;
+    private Customer customer;
+    private Staff staff;
 
-    public User(int id, String username, String password, String nama) {
+    public User(int id, String username, String password, Customer customer, Staff staff) {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.nama = nama;
+        this.customer = customer;
+        this.staff = staff;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Staff getStaff() {
+        return staff;
+    }
+
+    public void setStaff(Staff staff) {
+        this.staff = staff;
     }
 
     public int getId() {
@@ -45,14 +63,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
     }
     
 }
