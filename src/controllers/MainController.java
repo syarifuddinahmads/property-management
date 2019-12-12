@@ -7,6 +7,7 @@ package controllers;
 
 import data.Data;
 import models.User;
+import views.CustomerView;
 import views.LoginView;
 import views.MainView;
 import views.StaffView;
@@ -38,6 +39,9 @@ public class MainController extends AbstractController{
         StaffView staffView = new StaffView();
     }
     
-    
+    @Override
+    public void customerView(){
+        CustomerView customerView = new CustomerView();
+    }
     
 }

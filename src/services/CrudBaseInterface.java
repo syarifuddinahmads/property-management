@@ -14,10 +14,10 @@ import models.User;
 public interface CrudBaseInterface {
     
     public User insert(User user);
-    public Object edit(int id);
-    public Object search(int id);
-    public Object delete(int id);
-    public void update(Object object);
+    public User edit(int id);
+    public User search(int id);
+    public User delete(int id);
+    public void update(User User,int id);
     public void detail();
     
 }

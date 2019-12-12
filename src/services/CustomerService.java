@@ -6,13 +6,14 @@
 package services;
 
 import data.Data;
+import models.Customer;
 import models.User;
 
 /**
  *
  * @author udin
  */
-public class StaffService implements CrudBaseInterface{
+public class CustomerService implements CrudBaseInterface {
 
     @Override
     public User insert(User user) {
@@ -68,5 +69,5 @@ public class StaffService implements CrudBaseInterface{
     public void detail() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

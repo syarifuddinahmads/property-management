@@ -32,6 +32,10 @@ public class ComponentView extends JFrame {
     JButton btnLogin = new JButton("Login");
     JButton btnCancel = new JButton("Cancel");
     JButton btnSimpan = new JButton("Simpan");
+    JButton btnUpdate = new JButton("Update");
+    JButton btnDelete = new JButton("Delete");
+    JButton btnEdit = new JButton("Edit");
+    JButton btnClose = new JButton("Close");
 
     // Main View
     JLabel lblTitleProperty = new JLabel("Savira Property Surabaya");

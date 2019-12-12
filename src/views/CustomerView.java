@@ -13,10 +13,9 @@ import javax.swing.JTable;
  *
  * @author udin
  */
-public class StaffView extends ComponentView {
+public class CustomerView extends ComponentView{
 
-    public StaffView() {
-
+    public CustomerView() {
         lblUsername.setBounds(24, 48, 100, 26);
         add(lblUsername);
 
@@ -80,12 +79,13 @@ public class StaffView extends ComponentView {
         
         
         
-        setTitle("STAFF");
+        setTitle("CUSTOMER");
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(925, 550);
         setVisible(true);
+        
     }
-
+    
 }

@@ -30,6 +30,10 @@ public abstract class AbstractController {
     public void staffView(){
         
     }
+    
+    public void customerView(){
+        
+    }
    
 
 }
