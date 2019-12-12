@@ -50,20 +50,19 @@ public class StaffView extends ComponentView {
         btnCancel.setBounds(134, 298, 100, 26);
         add(btnCancel);
 
-        
         btnSimpan.setBounds(254, 298, 100, 26);
         add(btnSimpan);
-                
-        btnEdit.setBounds(212, 298, 100, 26);
+
+        btnEdit.setBounds(400, 298, 100, 26);
         add(btnEdit);
-        
-        btnUpdate.setBounds(334, 298, 100, 26);
+
+        btnUpdate.setBounds(535, 298, 100, 26);
         add(btnUpdate);
-        
-        btnDelete.setBounds(554, 298, 100, 26);
+
+        btnDelete.setBounds(665, 298, 100, 26);
         add(btnDelete);
-        
-        btnClose.setBounds(754, 298, 100, 26);
+
+        btnClose.setBounds(800, 298, 100, 26);
         add(btnClose);
         
         
@@ -84,7 +83,7 @@ public class StaffView extends ComponentView {
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(925, 550);
+        setSize(950, 450);
         setVisible(true);
     }
 
