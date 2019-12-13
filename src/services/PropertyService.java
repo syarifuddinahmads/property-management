@@ -67,8 +67,13 @@ public class PropertyService implements PropertyInterface{
     }
 
     @Override
-    public void update(Property property, int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Property update(Property property, int id) {
+        for (int i = 0; i < Data.propertyArr.size(); i++) {
+            if (Data.propertyArr.get(i).getIdProperty()== id) {
+                
+            }
+        }
+        return property;
     }
 
     @Override

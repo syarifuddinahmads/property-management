@@ -17,6 +17,6 @@ public interface PropertyInterface {
     public Property edit(int id);
     public Property search(int id);
     public Property delete(int id);
-    public void update(Property property,int id);
+    public Property update(Property property,int id);
     public void detail();
 }

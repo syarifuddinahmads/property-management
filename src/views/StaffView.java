@@ -5,15 +5,23 @@
  */
 package views;
 
+import controllers.StaffController;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JTable;
+import models.Staff;
+import models.User;
+import data.Data;
 
 /**
  *
  * @author udin
  */
 public class StaffView extends ComponentView {
+    
+    static StaffController  staffController = new StaffController();
 
     public StaffView() {
 
@@ -52,6 +60,27 @@ public class StaffView extends ComponentView {
 
         btnSimpan.setBounds(254, 298, 100, 26);
         add(btnSimpan);
+        
+        btnSimpan.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String nama = etName.getText();
+                String username = etUsername.getText();
+                String password = etPassword.toString();
+                int noHp = Integer.parseInt(etNoHp.getText());
+                int id = (Data.usersArr.size()+1);
+                String alamat = etAlamat.getText();
+                Staff staff = new Staff(id, nama, noHp, alamat);
+                User user = new User(id, username, password, null, staff);
+                User userAdd = staffController.insert(user);
+                if(userAdd == null){
+                    showMessage("Simpan data Staff gagal !");
+                }else{
+                    showMessage("Simpan data Staff berhasil !");
+                }
+            }
+        });
 
         btnEdit.setBounds(400, 298, 100, 26);
         add(btnEdit);
