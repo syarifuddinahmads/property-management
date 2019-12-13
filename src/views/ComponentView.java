@@ -6,6 +6,7 @@
 package views;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
@@ -24,11 +25,22 @@ public class ComponentView extends JFrame {
     JLabel lblNama = new JLabel("Nama");
     JLabel lblNoHp = new JLabel("No HP");
     JLabel lblAlamat = new JLabel("Alamat");
+    JLabel lblPanjang = new JLabel("Panjang");
+    JLabel lblLebar = new JLabel("Lebar");
+    JLabel lblLuas = new JLabel("Luas");
+    JLabel lblTipe = new JLabel("Tipe");
+    JLabel lblHarga = new JLabel("Harga");
     JTextField etUsername = new JTextField();
     JPasswordField etPassword = new JPasswordField();
     JTextField etName = new JTextField();
     JTextField etNoHp = new JTextField();
     JTextField etAlamat = new JTextField();
+    JTextField etPanjang = new JTextField();
+    JTextField etLebar = new JTextField();
+    JTextField etLuas = new JTextField();
+    JTextField etTipe = new JTextField();
+    JTextField etHarga = new JTextField();
+    JComboBox jcTipeProperty = new JComboBox();
     JButton btnLogin = new JButton("Login");
     JButton btnCancel = new JButton("Cancel");
     JButton btnSimpan = new JButton("Simpan");

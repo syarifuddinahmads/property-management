@@ -27,7 +27,8 @@ public class TugasAkhirPraktikumPBO {
             mainController.mainView();
         } else {
 //            mainController.loginView();
-            mainController.staffView();
+//            mainController.staffView();
+            mainController.propertyView();
 //            mainController.customerView();
         }
     }

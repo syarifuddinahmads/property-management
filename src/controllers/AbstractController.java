@@ -34,6 +34,10 @@ public abstract class AbstractController {
     public void customerView(){
         
     }
+    
+    public void propertyView(){
+        
+    }
    
 
 }

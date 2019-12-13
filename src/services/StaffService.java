@@ -5,6 +5,7 @@
  */
 package services;
 
+import interfaces.CrudBaseInterface;
 import data.Data;
 import models.User;
 
@@ -67,6 +68,11 @@ public class StaffService implements CrudBaseInterface{
     @Override
     public void detail() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public User getData() {
+        return null;
     }
     
 }

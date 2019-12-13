@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package services;
+package interfaces;
 
 import models.User;
 
@@ -12,7 +12,7 @@ import models.User;
  * @author udin
  */
 public interface CrudBaseInterface {
-    
+    public User getData();
     public User insert(User user);
     public User edit(int id);
     public User search(int id);

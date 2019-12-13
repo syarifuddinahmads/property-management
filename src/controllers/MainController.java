@@ -10,6 +10,7 @@ import models.User;
 import views.CustomerView;
 import views.LoginView;
 import views.MainView;
+import views.PropertyView;
 import views.StaffView;
 
 /**
@@ -44,4 +45,8 @@ public class MainController extends AbstractController{
         CustomerView customerView = new CustomerView();
     }
     
+    @Override
+    public void propertyView() {
+        PropertyView propertyView = new PropertyView();
+    }
 }
