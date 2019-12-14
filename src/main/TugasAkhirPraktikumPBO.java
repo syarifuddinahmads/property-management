@@ -22,6 +22,7 @@ public class TugasAkhirPraktikumPBO {
      */
     public static void main(String[] args) {
         mainController.injectDataUser();
+        mainController.injectDataTypeProperty();
         boolean statusLogin = Data.isLoggedIn;
         if (statusLogin) {
             mainController.mainView();

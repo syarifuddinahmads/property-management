@@ -27,7 +27,7 @@ public class StaffView extends ComponentView {
 
     StaffController staffController = new StaffController();
     DefaultTableModel tableModel;
-    String nama = etName.getText();
+    String nama;
     String username;
     String password;
     String noHp;
@@ -148,8 +148,8 @@ public class StaffView extends ComponentView {
             tableModel.addRow(new Object[]{(i + 1), Data.staffArr.get(i).getNamaStaff(), Data.staffArr.get(i).getNoHpStaff(), Data.staffArr.get(i).getAlamatStaff()});
         }
         tblUser.setModel(tableModel);
-        tblScroll.setBounds(400, 48, 500, 225);
-        add(tblScroll);
+        tblUserScroll.setBounds(400, 48, 500, 225);
+        add(tblUserScroll);
     }
 
     public static void resetFieldStaff() {

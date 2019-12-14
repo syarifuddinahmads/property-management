@@ -5,6 +5,7 @@
  */
 package views;
 
+import controllers.MainController;
 import controllers.StaffController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,17 +17,51 @@ import javax.swing.JFrame;
  */
 public class MainView extends ComponentView{
 
-    static StaffController staffController  = new StaffController();
+    static MainController mainController = new MainController();
     
     public MainView() {
         
-        btnStaff.setBounds(24, 24, 100, 26);
+        btnStaff.setBounds(24, 24, 120, 26);
         add(btnStaff);
+        
+        btnCustomer.setBounds(24, 64, 120, 26);
+        add(btnCustomer);
+        
+        btnProperty.setBounds(24, 104, 120, 26);
+        add(btnProperty);
+        
+        btnTransaction.setBounds(24, 144, 120, 26);
+        add(btnTransaction);
         
         btnStaff.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                staffController.staffView();
+                setVisible(false);
+                mainController.staffView();
+            }
+        });
+        
+        btnCustomer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                mainController.customerView();
+            }
+        });
+        
+        btnProperty.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                mainController.propertyView();
+            }
+        });
+        
+        btnTransaction.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                mainController.transactionView();
             }
         });
         

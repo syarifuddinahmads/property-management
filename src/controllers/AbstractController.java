@@ -15,6 +15,9 @@ public abstract class AbstractController {
 
     public void injectDataUser() {
     }
+    
+    public void injectDataTypeProperty() {
+    }
 
     public void loginView() {
     }
@@ -36,6 +39,10 @@ public abstract class AbstractController {
     }
     
     public void propertyView(){
+        
+    }
+    
+    public void transactionView(){
         
     }
    

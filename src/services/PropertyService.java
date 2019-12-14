@@ -13,7 +13,7 @@ import data.Data;
  *
  * @author USER
  */
-public class PropertyService implements PropertyInterface{
+public class PropertyService implements PropertyInterface {
 
     @Override
     public Property getData() {
@@ -22,18 +22,15 @@ public class PropertyService implements PropertyInterface{
 
     @Override
     public Property insert(Property property) {
-        if(property != null){
-            Data.propertyArr.add(property);
-        }
-        
-        return null;
+        Data.propertyArr.add(property);
+        return property;
     }
 
     @Override
     public Property edit(int id) {
         Property property = null;
         for (int i = 0; i < Data.propertyArr.size(); i++) {
-            if (Data.propertyArr.get(i).getIdProperty()== id) {
+            if (Data.propertyArr.get(i).getIdProperty() == id) {
                 property = Data.propertyArr.get(i);
             }
         }
@@ -45,7 +42,7 @@ public class PropertyService implements PropertyInterface{
     public Property search(int id) {
         Property property = null;
         for (int i = 0; i < Data.propertyArr.size(); i++) {
-            if (Data.propertyArr.get(i).getIdProperty()== id) {
+            if (Data.propertyArr.get(i).getIdProperty() == id) {
                 property = Data.propertyArr.get(i);
             }
         }
@@ -57,7 +54,7 @@ public class PropertyService implements PropertyInterface{
     public Property delete(int id) {
         Property property = null;
         for (int i = 0; i < Data.propertyArr.size(); i++) {
-            if (Data.propertyArr.get(i).getIdProperty()== id) {
+            if (Data.propertyArr.get(i).getIdProperty() == id) {
                 property = Data.propertyArr.get(i);
                 Data.propertyArr.remove(i);
             }
@@ -68,17 +65,19 @@ public class PropertyService implements PropertyInterface{
 
     @Override
     public Property update(Property property, int id) {
-        for (int i = 0; i < Data.propertyArr.size(); i++) {
-            if (Data.propertyArr.get(i).getIdProperty()== id) {
-                
-            }
-        }
-        return property;
+        Property propertyUpdate = Data.propertyArr.get(id);
+        propertyUpdate.setHargaProperty(property.getHargaProperty());
+        propertyUpdate.setLebarProperty(property.getLebarProperty());
+        propertyUpdate.setPanjangProperty(property.getPanjangProperty());
+        propertyUpdate.setLuasProperty(property.getPanjangProperty() * property.getLebarProperty());
+        propertyUpdate.setNamaProperty(property.getNamaProperty());
+        propertyUpdate.setTipeProperty(property.getTipeProperty());
+        return propertyUpdate;
     }
 
     @Override
     public void detail() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

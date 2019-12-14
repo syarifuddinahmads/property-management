@@ -6,14 +6,14 @@
 package controllers;
 
 import data.Data;
-import static data.Data.staffArr;
-import models.Staff;
+import models.TypeProperty;
 import models.User;
 import views.CustomerView;
 import views.LoginView;
 import views.MainView;
 import views.PropertyView;
 import views.StaffView;
+import views.TransactionView;
 
 /**
  *
@@ -26,6 +26,16 @@ public class MainController extends AbstractController {
         int id = Data.staffArr.size() + 1;
         User user = new User(id, "admin", "admin", 1);
         Data.usersArr.add(user);
+    }
+    
+    @Override
+    public void injectDataTypeProperty() {
+        TypeProperty typeProperty = new TypeProperty((Data.typePropertyArr.size()+1), "Savira 760");
+        Data.typePropertyArr.add(typeProperty);
+        TypeProperty typeProperty1 = new TypeProperty((Data.typePropertyArr.size()+1), "Savira  B360");
+        Data.typePropertyArr.add(typeProperty1);
+        TypeProperty typeProperty2 = new TypeProperty((Data.typePropertyArr.size()+1), "Savira  T66");
+        Data.typePropertyArr.add(typeProperty2);
     }
 
     @Override
@@ -51,5 +61,10 @@ public class MainController extends AbstractController {
     @Override
     public void propertyView() {
         PropertyView propertyView = new PropertyView();
+    }
+
+    @Override
+    public void transactionView() {
+        TransactionView transactionView = new TransactionView();
     }
 }

@@ -13,7 +13,7 @@ import models.Customer;
  *
  * @author udin
  */
-public class CustomerService implements CustomerInterface{
+public class CustomerService implements CustomerInterface {
 
     @Override
     public Customer getData() {
@@ -22,27 +22,53 @@ public class CustomerService implements CustomerInterface{
 
     @Override
     public Customer insert(Customer customer) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Data.customersArr.add(customer);
+        return customer;
     }
 
     @Override
     public Customer edit(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Customer customer = null;
+        for (int i = 0; i < Data.customersArr.size(); i++) {
+            if (Data.customersArr.get(i).getIdCustomer() == id) {
+                customer = Data.customersArr.get(i);
+            }
+        }
+        return customer;
     }
 
     @Override
     public Customer search(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Customer customer = null;
+        for (int i = 0; i < Data.customersArr.size(); i++) {
+            if (Data.customersArr.get(i).getIdCustomer() == id) {
+                customer = Data.customersArr.get(i);
+            }
+        }
+        return customer;
     }
 
     @Override
     public Customer delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Customer customer = null;
+        for (int i = 0; i < Data.customersArr.size(); i++) {
+            if (Data.customersArr.get(i).getIdCustomer() == id) {
+                customer = Data.customersArr.get(i);
+                Data.customersArr.remove(i);
+            }
+        }
+        return customer;
     }
 
     @Override
-    public void update(Customer customer, int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Customer update(Customer customer, int id) {
+        Customer customerUpdate = Data.customersArr.get(id);
+        customerUpdate.setUsername(customer.getUsername());
+        customerUpdate.setPassword(customer.getPassword());
+        customerUpdate.setNamaCustomer(customer.getNamaCustomer());
+        customerUpdate.setNoHpCustomer(customer.getNoHpCustomer());
+        customerUpdate.setAlamatCustomer(customer.getAlamatCustomer());
+        return customerUpdate;
     }
 
     @Override

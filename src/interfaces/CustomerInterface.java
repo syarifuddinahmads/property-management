@@ -18,7 +18,7 @@ public interface CustomerInterface {
     public Customer edit(int id);
     public Customer search(int id);
     public Customer delete(int id);
-    public void update(Customer customer,int id);
+    public Customer update(Customer customer,int id);
     public void detail();
     
 }

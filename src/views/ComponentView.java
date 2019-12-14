@@ -43,7 +43,7 @@ public class ComponentView extends JFrame {
     static JTextField etLuas = new JTextField();
     static JTextField etTipe = new JTextField();
     static JTextField etHarga = new JTextField();
-    JComboBox jcTipeProperty = new JComboBox();
+    static JComboBox jcTipeProperty = new JComboBox();
     JButton btnLogin = new JButton("Login");
     JButton btnCancel = new JButton("Cancel");
     JButton btnSimpan = new JButton("Simpan");
@@ -57,7 +57,17 @@ public class ComponentView extends JFrame {
     JLabel lblTitleProperty = new JLabel("Savira Property Surabaya");
     JLabel lblDescProperty = new JLabel("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
     JButton btnStaff = new JButton("Staff");
+    JButton btnCustomer = new JButton("Customer");
+    JButton btnTransaction = new JButton("Transaction");
+    JButton btnProperty = new JButton("Property");
     
     JTable tblUser = new JTable();
-    JScrollPane tblScroll = new JScrollPane(tblUser);
+    JScrollPane tblUserScroll = new JScrollPane(tblUser);
+    
+    JTable tblProperty = new JTable();
+    JScrollPane tblPopertyScroll = new JScrollPane(tblProperty);
+    
+    JTable tblTransaction = new JTable();
+    JScrollPane tblTransactionScroll = new JScrollPane(tblTransaction);
+    
 }
