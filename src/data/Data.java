@@ -6,7 +6,9 @@
 package data;
 
 import java.util.ArrayList;
+import models.Customer;
 import models.Property;
+import models.Staff;
 import models.User;
 
 /**
@@ -17,6 +19,9 @@ public class Data {
     
     public static boolean isLoggedIn = false;
     public static ArrayList<User> usersArr = new ArrayList<>();
+    public static ArrayList<Customer> customersArr = new ArrayList<>();
+    public static ArrayList<Staff> staffArr = new ArrayList<>();
     public static ArrayList<Property> propertyArr = new ArrayList<>();
+    
     
 }

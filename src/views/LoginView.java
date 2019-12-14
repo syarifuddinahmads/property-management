@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import models.User;
+import static views.ComponentView.etUsername;
 
 /**
  *
@@ -22,6 +23,8 @@ public class LoginView extends ComponentView {
 
     static LoginController loginController = new LoginController();
     static MainController mainController = new  MainController();
+    String username;
+    String password;
 
     public LoginView() {
 
@@ -48,8 +51,8 @@ public class LoginView extends ComponentView {
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String username = etUsername.getText().toLowerCase().toString();
-                String password = etPassword.getText().toLowerCase().toString();
+                username = etUsername.getText().toLowerCase().toString();
+                password = etPassword.getText().toLowerCase().toString();
                 if (username.equals("") && password.equals("")) {
                     JOptionPane.showMessageDialog(null, "Username & Password belum diisi !");
                 } else {
@@ -58,6 +61,8 @@ public class LoginView extends ComponentView {
                         JOptionPane.showMessageDialog(null, "Username & Password Salah !");
                     }else{
                         mainController.mainView();
+                        etUsername.setText("");
+                        etPassword.setText("");
                         setVisible(false);
                     }
                 }

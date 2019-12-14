@@ -5,75 +5,49 @@
  */
 package services;
 
-import interfaces.CrudBaseInterface;
 import data.Data;
+import interfaces.CustomerInterface;
 import models.Customer;
-import models.User;
 
 /**
  *
  * @author udin
  */
-public class CustomerService implements CrudBaseInterface {
+public class CustomerService implements CustomerInterface{
 
     @Override
-    public User insert(User user) {
-        if (user != null) {
-            Data.usersArr.add(user);
-        }
-        return null;
+    public Customer getData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User edit(int id) {
-        User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-            }
-        }
-
-        return user;
+    public Customer insert(Customer customer) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User search(int id) {
-       User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-            }
-        }
-
-        return user;
+    public Customer edit(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public User delete(int id) {
-        User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-                Data.usersArr.remove(i);
-            }
-        }
-
-        return user;
+    public Customer search(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(User User, int id) {
+    public Customer delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void update(Customer customer, int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void detail() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public User getData() {
-        return null;
     }
 
 }

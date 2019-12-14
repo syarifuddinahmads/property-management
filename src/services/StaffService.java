@@ -5,64 +5,72 @@
  */
 package services;
 
-import interfaces.CrudBaseInterface;
 import data.Data;
-import models.User;
+import interfaces.StaffInterface;
+import java.util.ArrayList;
+import models.Staff;
 
 /**
  *
  * @author udin
  */
-public class StaffService implements CrudBaseInterface{
+public class StaffService implements StaffInterface {
 
     @Override
-    public User insert(User user) {
-        if (user != null) {
-            Data.usersArr.add(user);
-        }
-        return null;
-    }
-
-    @Override
-    public User edit(int id) {
-        User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-            }
-        }
-
-        return user;
-    }
-
-    @Override
-    public User search(int id) {
-       User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-            }
-        }
-
-        return user;
-    }
-
-    @Override
-    public User delete(int id) {
-        User user = null;
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.usersArr.get(i).getId() == id) {
-                user = Data.usersArr.get(i);
-                Data.usersArr.remove(i);
-            }
-        }
-
-        return user;
-    }
-
-    @Override
-    public void update(User User, int id) {
+    public Staff getData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Staff insert(Staff staff) {
+        Data.staffArr.add(staff);
+        return staff;
+    }
+
+    @Override
+    public Staff edit(int id) {
+        Staff staff = null;
+        for (int i = 0; i < Data.staffArr.size(); i++) {
+            if (Data.staffArr.get(i).getIdStaff() == id) {
+                staff = Data.staffArr.get(i);
+            }
+        }
+        return staff;
+
+    }
+
+    @Override
+    public Staff search(int id) {
+        Staff staff = null;
+        for (int i = 0; i < Data.staffArr.size(); i++) {
+            if (Data.staffArr.get(i).getIdStaff() == id) {
+                staff = Data.staffArr.get(i);
+            }
+        }
+        return staff;
+    }
+
+    @Override
+    public Staff delete(int id) {
+        Staff staff = null;
+        for (int i = 0; i < Data.staffArr.size(); i++) {
+            if (Data.staffArr.get(i).getIdStaff() == id) {
+                staff = Data.staffArr.get(i);
+                Data.staffArr.remove(i);
+            }
+        }
+        return staff;
+    }
+
+    @Override
+    public Staff update(Staff staff, int id) {
+        Staff staffUpdate = Data.staffArr.get(id);
+        staffUpdate.setUsername(staff.getUsername());
+        staffUpdate.setPassword(staff.getPassword());
+        staffUpdate.setNamaStaff(staff.getNamaStaff());
+        staffUpdate.setNoHpStaff(staff.getNoHpStaff());
+        staffUpdate.setAlamatStaff(staff.getAlamatStaff());
+        return staffUpdate;
     }
 
     @Override
@@ -70,9 +78,4 @@ public class StaffService implements CrudBaseInterface{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public User getData() {
-        return null;
-    }
-    
 }

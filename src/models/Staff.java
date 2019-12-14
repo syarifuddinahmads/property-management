@@ -9,13 +9,14 @@ package models;
  *
  * @author udin
  */
-public class Staff {
+public class Staff extends User{
     private int idStaff;
     private String namaStaff;
-    private int noHpStaff;
+    private String noHpStaff;
     private String alamatStaff;
 
-    public Staff(int idStaff, String namaStaff, int noHpStaff, String alamatStaff) {
+    public Staff(int idStaff, String namaStaff, String noHpStaff, String alamatStaff, int id, String username, String password) {
+        super(id, username, password);
         this.idStaff = idStaff;
         this.namaStaff = namaStaff;
         this.noHpStaff = noHpStaff;
@@ -38,11 +39,11 @@ public class Staff {
         this.namaStaff = namaStaff;
     }
 
-    public int getNoHpStaff() {
+    public String getNoHpStaff() {
         return noHpStaff;
     }
 
-    public void setNoHpStaff(int noHpStaff) {
+    public void setNoHpStaff(String noHpStaff) {
         this.noHpStaff = noHpStaff;
     }
 

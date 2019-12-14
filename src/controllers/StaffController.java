@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import models.User;
+import models.Staff;
 import services.StaffService;
 import views.StaffView;
 
@@ -22,10 +22,20 @@ public class StaffController extends AbstractController {
         StaffView staffView = new StaffView();
     }
 
-    public User insert(User user) {
-        return staffService.insert(user);
+    public Staff insert(Staff staff) {
+        return this.staffService.insert(staff);
+    }
+
+    public Staff edit(int id) {
+        return this.staffService.edit(id);
+    }
+
+    public Staff delete(int id) {
+        return this.staffService.delete(id);
     }
     
-    
-    
+    public Staff update(Staff staff, int id){
+        return this.staffService.update(staff, id);
+    }
+
 }

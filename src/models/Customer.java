@@ -9,18 +9,21 @@ package models;
  *
  * @author udin
  */
-public class Customer {
+public class Customer extends User{
     private int idCustomer;
     private String namaCustomer;
-    private int noHpCustomer;
+    private String noHpCustomer;
     private String alamatCustomer;
 
-    public Customer(int idCustomer, String namaCustomer, int noHpCustomer, String alamatCustomer) {
+    public Customer(int idCustomer, String namaCustomer, String noHpCustomer, String alamatCustomer, int id, String username, String password) {
+        super(id, username, password);
         this.idCustomer = idCustomer;
         this.namaCustomer = namaCustomer;
         this.noHpCustomer = noHpCustomer;
         this.alamatCustomer = alamatCustomer;
     }
+    
+    
 
     public int getIdCustomer() {
         return idCustomer;
@@ -38,11 +41,11 @@ public class Customer {
         this.namaCustomer = namaCustomer;
     }
 
-    public int getNoHpCustomer() {
+    public String getNoHpCustomer() {
         return noHpCustomer;
     }
 
-    public void setNoHpCustomer(int noHpCustomer) {
+    public void setNoHpCustomer(String noHpCustomer) {
         this.noHpCustomer = noHpCustomer;
     }
 

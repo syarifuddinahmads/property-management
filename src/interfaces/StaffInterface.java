@@ -5,19 +5,21 @@
  */
 package interfaces;
 
-import models.User;
+import models.Staff;
+
+
 
 /**
  *
  * @author udin
  */
-public interface CrudBaseInterface {
-    public User getData();
-    public User insert(User user);
-    public User edit(int id);
-    public User search(int id);
-    public User delete(int id);
-    public void update(User User,int id);
+public interface StaffInterface {
+    public Staff getData();
+    public Staff insert(Staff staff);
+    public Staff edit(int id);
+    public Staff search(int id);
+    public Staff delete(int id);
+    public Staff update(Staff staff,int id);
     public void detail();
     
 }

@@ -6,6 +6,8 @@
 package controllers;
 
 import data.Data;
+import static data.Data.staffArr;
+import models.Staff;
 import models.User;
 import views.CustomerView;
 import views.LoginView;
@@ -17,11 +19,12 @@ import views.StaffView;
  *
  * @author udin
  */
-public class MainController extends AbstractController{
+public class MainController extends AbstractController {
 
     @Override
     public void injectDataUser() {
-        User user = new User((Data.usersArr.size()+1), "admin", "admin", null, null);
+        int id = Data.staffArr.size() + 1;
+        User user = new User(id, "admin", "admin", 1);
         Data.usersArr.add(user);
     }
 
@@ -29,22 +32,22 @@ public class MainController extends AbstractController{
     public void mainView() {
         MainView mainView = new MainView();
     }
-    
+
     @Override
     public void loginView() {
         LoginView loginView = new LoginView();
     }
-    
+
     @Override
-    public void staffView(){
+    public void staffView() {
         StaffView staffView = new StaffView();
     }
-    
+
     @Override
-    public void customerView(){
+    public void customerView() {
         CustomerView customerView = new CustomerView();
     }
-    
+
     @Override
     public void propertyView() {
         PropertyView propertyView = new PropertyView();

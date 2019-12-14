@@ -3,8 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/property-management/src/views/CustomerView.java</file>
-            <file>file:/D:/property-management/src/views/StaffView.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/interfaces/CustomerInterface.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/data/Data.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/views/StaffView.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/services/StaffService.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/controllers/LoginController.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/models/Customer.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/interfaces/StaffInterface.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/controllers/StaffController.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/main/TugasAkhirPraktikumPBO.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/models/Staff.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/services/LoginService.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/services/CustomerService.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/controllers/MainController.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/controllers/AbstractController.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/views/LoginView.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/models/User.java</file>
+            <file>file:/home/udin/NetBeansProjects/TugasAkhirPraktikumPBO/src/views/ComponentView.java</file>
         </group>
     </open-files>
 </project-private>
