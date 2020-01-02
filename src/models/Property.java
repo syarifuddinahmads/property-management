@@ -18,8 +18,9 @@ public class Property {
     private float lebarProperty;
     private float luasProperty;
     private float hargaProperty;
+    private int totalProperty;
 
-    public Property(int idProperty, String namaProperty, String tipeProperty, float panjangProperty, float lebarProperty, float luasProperty, float hargaProperty) {
+    public Property(int idProperty, String namaProperty, String tipeProperty, float panjangProperty, float lebarProperty, float luasProperty, float hargaProperty, int totalProperty) {
         this.idProperty = idProperty;
         this.namaProperty = namaProperty;
         this.tipeProperty = tipeProperty;
@@ -27,7 +28,9 @@ public class Property {
         this.lebarProperty = lebarProperty;
         this.luasProperty = luasProperty;
         this.hargaProperty = hargaProperty;
+        this.totalProperty = totalProperty;
     }
+    
 
     public void setTipeProperty(String tipeProperty) {
         this.tipeProperty = tipeProperty;
@@ -84,5 +87,15 @@ public class Property {
     public void setLuasProperty(float luasProperty) {
         this.luasProperty = luasProperty;
     }
+
+    public void setTotalProperty(int totalProperty) {
+        this.totalProperty = totalProperty;
+    }
+
+    public int getTotalProperty() {
+        return totalProperty;
+    }
+    
+    
 
 }

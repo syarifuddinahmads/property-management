@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
-
-import models.Transaction;
+package views;
 
 /**
  *
- * @author USER
+ * @author udin
  */
-public interface TransactionInterface {
- 
-    public Transaction insert(Transaction transaction);
+public class MemberPaymentView extends ComponentView{
+    
     
 }

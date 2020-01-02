@@ -27,11 +27,8 @@ public class TugasAkhirPraktikumPBO {
         if (statusLogin) {
             mainController.mainView();
         } else {
-            mainController.mainView();
-//            mainController.loginView();
-//            mainController.staffView();
-//            mainController.propertyView();
-//            mainController.customerView();
+            mainController.loginView();
+//            mainController.transactionView();
         }
     }
 

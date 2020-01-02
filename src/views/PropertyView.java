@@ -39,6 +39,7 @@ public class PropertyView extends ComponentView {
     private float lebarProperty = 0;
     private float luasProperty = 0;
     private float hargaProperty = 0;
+    private int totalProperty;
 
     public PropertyView() {
 
@@ -63,9 +64,16 @@ public class PropertyView extends ComponentView {
         lblLuas.setBounds(24, 148, 100, 26);
         add(lblLuas);
 
-        etLuas.setBounds(124, 148, 240, 26);
+        etLuas.setBounds(124, 148, 100, 26);
         etLuas.setEditable(false);
         add(etLuas);
+        
+        
+        lblTotal.setBounds(244, 148, 100, 26);
+        add(lblTotal);
+
+        etTotal.setBounds(295, 148, 70, 26);
+        add(etTotal);
 
         lblTipe.setBounds(24, 198, 100, 26);
         add(lblTipe);
@@ -178,6 +186,7 @@ public class PropertyView extends ComponentView {
             public void actionPerformed(ActionEvent e) {
                 resetFieldProperty();
                 setVisible(false);
+                propertyController.mainView();
             }
         });
 
@@ -196,11 +205,11 @@ public class PropertyView extends ComponentView {
             jcTipeProperty.addItem(Data.typePropertyArr.get(i).getNamaTypeProperty());
         }
         
-        String[] headerTable = {"#", "Name", "Panjang", "Lebar", "Luas", "Tipe","Harga"};
+        String[] headerTable = {"#", "Name", "Panjang", "Lebar", "Luas","Total", "Tipe","Harga"};
         tableModel = new DefaultTableModel(null, headerTable);
         tableModel.setRowCount(0);
         for (int i = 0; i < Data.propertyArr.size(); i++) {
-            tableModel.addRow(new Object[]{(i + 1), Data.propertyArr.get(i).getNamaProperty(), Data.propertyArr.get(i).getPanjangProperty(), Data.propertyArr.get(i).getLebarProperty(), Data.propertyArr.get(i).getLuasProperty(), Data.propertyArr.get(i).getTipeProperty(),Data.propertyArr.get(i).getHargaProperty()});
+            tableModel.addRow(new Object[]{(i + 1), Data.propertyArr.get(i).getNamaProperty(), Data.propertyArr.get(i).getPanjangProperty(), Data.propertyArr.get(i).getLebarProperty(), Data.propertyArr.get(i).getLuasProperty(),Data.propertyArr.get(i).getTotalProperty(), Data.propertyArr.get(i).getTipeProperty(),Data.propertyArr.get(i).getHargaProperty()});
         }
         tblProperty.setModel(tableModel);
         tblPopertyScroll.setBounds(400, 48, 500, 225);
@@ -223,6 +232,7 @@ public class PropertyView extends ComponentView {
         panjangProperty = Float.valueOf(etPanjang.getText());
         luasProperty = Float.valueOf(etLuas.getText());
         tipeProperty = jcTipeProperty.getSelectedItem().toString();
+        totalProperty = Integer.parseInt(etTotal.getText());
         idProperty = (Data.propertyArr.size() + 1);
         if (namaProperty.equals("")) {
             JOptionPane.showMessageDialog(null, "Nama property wajib diisi !");
@@ -236,8 +246,10 @@ public class PropertyView extends ComponentView {
             JOptionPane.showMessageDialog(null, "Lebar property wajib diisi !");
         } else if (hargaProperty < 0) {
             JOptionPane.showMessageDialog(null, "Harga property wajib diisi !");
+        } else if (totalProperty < 0) {
+            JOptionPane.showMessageDialog(null, "Total property wajib diisi !");
         } else {
-            Property property = new Property(idProperty, namaProperty, tipeProperty, panjangProperty, lebarProperty, luasProperty, hargaProperty);
+            Property property = new Property(idProperty, namaProperty, tipeProperty, panjangProperty, lebarProperty, luasProperty, hargaProperty,totalProperty);
             propertyController.insert(property);
             initDataProperty();
             resetFieldProperty();
@@ -279,6 +291,7 @@ public class PropertyView extends ComponentView {
             etPanjang.setText(String.valueOf(property.getPanjangProperty()));
             etLuas.setText(String.valueOf(property.getLuasProperty()));
             jcTipeProperty.setSelectedItem(property.getTipeProperty());
+            etTotal.setText(String.valueOf(property.getTotalProperty()));
         }
     }
 
@@ -292,6 +305,7 @@ public class PropertyView extends ComponentView {
             panjangProperty = Float.valueOf(etPanjang.getText());
             luasProperty = Float.valueOf(etLuas.getText());
             tipeProperty = jcTipeProperty.getSelectedItem().toString();
+            totalProperty = Integer.parseInt(etTotal.getText());
             idProperty = (Data.propertyArr.size() + 1);
             if (namaProperty.equals("")) {
                 JOptionPane.showMessageDialog(null, "Nama property wajib diisi !");
@@ -305,8 +319,10 @@ public class PropertyView extends ComponentView {
                 JOptionPane.showMessageDialog(null, "Lebar property wajib diisi !");
             } else if (hargaProperty < 0) {
                 JOptionPane.showMessageDialog(null, "Harga property wajib diisi !");
+            }else if (totalProperty < 0) {
+                JOptionPane.showMessageDialog(null, "Total property wajib diisi !");
             } else {
-                Property property = new Property(idProperty, namaProperty, tipeProperty, panjangProperty, lebarProperty, luasProperty, hargaProperty);
+                Property property = new Property(idProperty, namaProperty, tipeProperty, panjangProperty, lebarProperty, luasProperty, hargaProperty,totalProperty);
                 Property propertyUpdate = propertyController.update(property, idProperty);
                 if (propertyUpdate == null) {
                     JOptionPane.showMessageDialog(null, "Gagal mengupdate data Property !");

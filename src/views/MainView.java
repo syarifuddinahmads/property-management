@@ -7,6 +7,7 @@ package views;
 
 import controllers.MainController;
 import controllers.StaffController;
+import data.Data;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -32,6 +33,9 @@ public class MainView extends ComponentView{
         
         btnTransaction.setBounds(24, 144, 120, 26);
         add(btnTransaction);
+        
+        btnLogout.setBounds(24, 188, 120, 26);
+        add(btnLogout);
         
         btnStaff.addActionListener(new ActionListener() {
             @Override
@@ -62,6 +66,15 @@ public class MainView extends ComponentView{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 mainController.transactionView();
+            }
+        });
+        
+        btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                Data.isLoggedIn = false;
+                mainController.loginView();
             }
         });
         

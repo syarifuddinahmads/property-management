@@ -23,7 +23,7 @@ import static views.ComponentView.etName;
 public class CustomerView extends ComponentView {
     static CustomerController customerController = new CustomerController();
     DefaultTableModel tableModel;
-    String nama = etName.getText();
+    String nama;
     String username;
     String password;
     String noHp;
@@ -124,6 +124,7 @@ public class CustomerView extends ComponentView {
             public void actionPerformed(ActionEvent e) {
                 resetFieldCustomer();
                 setVisible(false);
+                customerController.mainView();
             }
         });
 

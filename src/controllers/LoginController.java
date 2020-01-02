@@ -13,7 +13,7 @@ import views.LoginView;
  *
  * @author udin
  */
-public class LoginController extends AbstractController{
+public class LoginController extends MainController{
 
     static LoginService loginService = new LoginService();
     
@@ -21,8 +21,7 @@ public class LoginController extends AbstractController{
     public void loginView() {
         LoginView loginView = new LoginView();
     }
-    
-    @Override
+        
     public User doLogin(String username, String password){
         return loginService.doLogin(username, password);
     }

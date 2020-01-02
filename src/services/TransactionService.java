@@ -5,10 +5,21 @@
  */
 package services;
 
+import data.Data;
+import interfaces.TransactionInterface;
+import models.Transaction;
+
 /**
  *
  * @author USER
  */
-public class TransactionService {
+public class TransactionService implements TransactionInterface{
+
+    @Override
+    public Transaction insert(Transaction transaction) {
+        System.out.println("=="+transaction.getProperty().getNamaProperty());
+        Data.transactionArr.add(transaction);
+        return transaction;
+    }
     
 }

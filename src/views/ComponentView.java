@@ -24,15 +24,20 @@ public class ComponentView extends JFrame {
     // Login View
     JLabel lblLogin = new JLabel("LOGIN");
     JLabel lblUsername = new JLabel("Username");
-    JLabel lblPassword = new JLabel("Paswword");
+    JLabel lblPassword = new JLabel("Password");
     JLabel lblNama = new JLabel("Nama");
     JLabel lblNoHp = new JLabel("No HP");
     JLabel lblAlamat = new JLabel("Alamat");
     JLabel lblPanjang = new JLabel("Panjang");
     JLabel lblLebar = new JLabel("Lebar");
     JLabel lblLuas = new JLabel("Luas");
+    JLabel lblTotal = new JLabel("Total");
     JLabel lblTipe = new JLabel("Tipe");
     JLabel lblHarga = new JLabel("Harga");
+    JLabel lblTotalAngsuran = new JLabel("Angsuran");
+    JLabel lblBiayaAngsuran = new JLabel("Biaya Angsuran");
+    JLabel lblGrandTotalAngsuran = new JLabel("Grand Total");
+    JLabel lblDpAngsuran = new JLabel("DP Angsuran");
     static JTextField etUsername = new JTextField();
     static JPasswordField etPassword = new JPasswordField();
     static JTextField etName = new JTextField();
@@ -41,9 +46,14 @@ public class ComponentView extends JFrame {
     static JTextField etPanjang = new JTextField();
     static JTextField etLebar = new JTextField();
     static JTextField etLuas = new JTextField();
+    static JTextField etTotal = new JTextField();
     static JTextField etTipe = new JTextField();
     static JTextField etHarga = new JTextField();
+    static JTextField etDpAngsuran = new JTextField();
+    static JTextField etBiayaAngsuran = new JTextField();
+    static JTextField etGrandTotalAngsuran = new JTextField();
     static JComboBox jcTipeProperty = new JComboBox();
+    static JComboBox jcTotalAngsuran = new JComboBox();
     JButton btnLogin = new JButton("Login");
     JButton btnCancel = new JButton("Cancel");
     JButton btnSimpan = new JButton("Simpan");
@@ -51,6 +61,7 @@ public class ComponentView extends JFrame {
     JButton btnDelete = new JButton("Delete");
     JButton btnEdit = new JButton("Edit");
     JButton btnClose = new JButton("Close");
+    JButton btnLogout = new JButton("Logout");
     
 
     // Main View

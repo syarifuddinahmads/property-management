@@ -13,7 +13,7 @@ import views.StaffView;
  *
  * @author udin
  */
-public class StaffController extends AbstractController {
+public class StaffController extends MainController {
 
     static StaffService staffService = new StaffService();
 

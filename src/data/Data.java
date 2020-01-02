@@ -20,6 +20,7 @@ import models.User;
 public class Data {
     
     public static boolean isLoggedIn = false;
+    public static Staff staffLoggin = null;
     public static ArrayList<User> usersArr = new ArrayList<>();
     public static ArrayList<Customer> customersArr = new ArrayList<>();
     public static ArrayList<Staff> staffArr = new ArrayList<>();

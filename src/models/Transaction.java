@@ -11,21 +11,27 @@ package models;
  */
 public class Transaction {
     
-    int idTransaction;
-    Staff staff;
-    Customer customer;
-    Property property;
-    String createdAt;
-    String updatedAt;
+    private int idTransaction;
+    private Staff staff;
+    private Customer customer;
+    private Property property;
+    private float dpAngsuran ;
+    private float biayaAngsuran;
+    private int totalAngsuran;
+    private float grandTotalAngsuran;
 
-    public Transaction(int idTransaction, Staff staff, Customer customer, Property property, String createdAt, String updatedAt) {
+    public Transaction(int idTransaction, Staff staff, Customer customer, Property property, float dpAngsuran, float biayaAngsuran, int totalAngsuran, float grandTotalAngsuran) {
         this.idTransaction = idTransaction;
         this.staff = staff;
         this.customer = customer;
         this.property = property;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+        this.dpAngsuran = dpAngsuran;
+        this.biayaAngsuran = biayaAngsuran;
+        this.totalAngsuran = totalAngsuran;
+        this.grandTotalAngsuran = grandTotalAngsuran;
     }
+
+       
 
     public int getIdTransaction() {
         return idTransaction;
@@ -59,23 +65,38 @@ public class Transaction {
         this.property = property;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public float getDpAngsuran() {
+        return dpAngsuran;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setDpAngsuran(float dpAngsuran) {
+        this.dpAngsuran = dpAngsuran;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
+    public float getBiayaAngsuran() {
+        return biayaAngsuran;
     }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setBiayaAngsuran(float biayaAngsuran) {
+        this.biayaAngsuran = biayaAngsuran;
     }
-    
-    
+
+    public int getTotalAngsuran() {
+        return totalAngsuran;
+    }
+
+    public void setTotalAngsuran(int totalAngsuran) {
+        this.totalAngsuran = totalAngsuran;
+    }
+
+    public float getGrandTotalAngsuran() {
+        return grandTotalAngsuran;
+    }
+
+    public void setGrandTotalAngsuran(float grandTotalAngsuran) {
+        this.grandTotalAngsuran = grandTotalAngsuran;
+    }
+
     
     
 }

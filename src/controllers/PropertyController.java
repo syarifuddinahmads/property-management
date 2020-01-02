@@ -13,7 +13,7 @@ import views.PropertyView;
  *
  * @author USER
  */
-public class PropertyController extends AbstractController {
+public class PropertyController extends MainController {
     
     static PropertyService propertyService = new PropertyService();
 

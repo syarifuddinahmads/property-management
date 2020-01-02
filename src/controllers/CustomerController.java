@@ -12,7 +12,7 @@ import services.CustomerService;
  *
  * @author udin
  */
-public class CustomerController {
+public class CustomerController extends MainController{
     
     static CustomerService customerService = new CustomerService();
     

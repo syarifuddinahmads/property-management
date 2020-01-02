@@ -5,10 +5,19 @@
  */
 package controllers;
 
+import models.Transaction;
+import services.TransactionService;
+
 /**
  *
  * @author USER
  */
-public class TransactionController {
+public class TransactionController extends MainController{
+    
+    static TransactionService transactionService = new TransactionService();
+    
+    public Transaction insert(Transaction transaction){
+        return transactionService.insert(transaction);
+    }
     
 }

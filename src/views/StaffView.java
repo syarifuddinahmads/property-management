@@ -129,6 +129,7 @@ public class StaffView extends ComponentView {
             public void actionPerformed(ActionEvent e) {
                 resetFieldStaff();
                 setVisible(false);
+                staffController.mainView();
             }
         });
 

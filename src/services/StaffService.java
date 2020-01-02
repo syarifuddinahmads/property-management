@@ -9,6 +9,7 @@ import data.Data;
 import interfaces.StaffInterface;
 import java.util.ArrayList;
 import models.Staff;
+import models.User;
 
 /**
  *
@@ -24,6 +25,8 @@ public class StaffService implements StaffInterface {
     @Override
     public Staff insert(Staff staff) {
         Data.staffArr.add(staff);
+        User user = new User((Data.usersArr.size()+1), staff.getUsername(),staff.getPassword());
+        Data.usersArr.add(user);
         return staff;
     }
 
