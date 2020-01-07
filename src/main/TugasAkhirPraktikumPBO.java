@@ -8,6 +8,7 @@ package main;
 import controllers.MainController;
 import data.Data;
 import views.LoginView;
+import views.*;
 
 /**
  *
@@ -21,15 +22,16 @@ public class TugasAkhirPraktikumPBO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        mainController.injectDataUser();
-        mainController.injectDataTypeProperty();
-        boolean statusLogin = Data.isLoggedIn;
-        if (statusLogin) {
-            mainController.mainView();
-        } else {
-            mainController.loginView();
+//        mainController.injectDataUser();
+//        mainController.injectDataTypeProperty();
+//        boolean statusLogin = Data.isLoggedIn;
+//        if (statusLogin) {
+//            mainController.mainView();
+//        } else {
+//            mainController.loginView();
 //            mainController.transactionView();
+            MemberPaymentView member = new MemberPaymentView();
         }
     }
 
-}
+//}
