@@ -31,50 +31,50 @@ public class CustomerView extends ComponentView {
     String alamat;
 
     public CustomerView() {
-        lblUsername.setBounds(24, 48, 100, 26);
-        add(lblUsername);
-
-        etUsername.setBounds(124, 48, 240, 26);
-        add(etUsername);
-
-        lblPassword.setBounds(24, 96, 100, 26);
-        add(lblPassword);
-
-        etPassword.setBounds(124, 96, 240, 26);
-        add(etPassword);
-
-        lblNama.setBounds(24, 148, 100, 26);
-        add(lblNama);
-
-        etName.setBounds(124, 148, 240, 26);
-        add(etName);
-
-        lblNoHp.setBounds(24, 198, 100, 26);
-        add(lblNoHp);
-
-        etNoHp.setBounds(124, 198, 240, 26);
-        add(etNoHp);
-
-        lblAlamat.setBounds(24, 248, 100, 26);
-        add(lblAlamat);
-
-        etAlamat.setBounds(124, 248, 240, 26);
-        add(etAlamat);
-
-        btnCancel.setBounds(134, 298, 100, 26);
-        add(btnCancel);
-
-        btnSimpan.setBounds(254, 298, 100, 26);
-        add(btnSimpan);
-
-        btnEdit.setBounds(400, 298, 100, 26);
-        add(btnEdit);
-
-        btnUpdate.setBounds(535, 298, 100, 26);
-        add(btnUpdate);
-
-        btnDelete.setBounds(665, 298, 100, 26);
-        add(btnDelete);
+//        lblUsername.setBounds(24, 48, 100, 26);
+//        add(lblUsername);
+//
+//        etUsername.setBounds(124, 48, 240, 26);
+//        add(etUsername);
+//
+//        lblPassword.setBounds(24, 96, 100, 26);
+//        add(lblPassword);
+//
+//        etPassword.setBounds(124, 96, 240, 26);
+//        add(etPassword);
+//
+//        lblNama.setBounds(24, 148, 100, 26);
+//        add(lblNama);
+//
+//        etName.setBounds(124, 148, 240, 26);
+//        add(etName);
+//
+//        lblNoHp.setBounds(24, 198, 100, 26);
+//        add(lblNoHp);
+//
+//        etNoHp.setBounds(124, 198, 240, 26);
+//        add(etNoHp);
+//
+//        lblAlamat.setBounds(24, 248, 100, 26);
+//        add(lblAlamat);
+//
+//        etAlamat.setBounds(124, 248, 240, 26);
+//        add(etAlamat);
+//
+//        btnCancel.setBounds(134, 298, 100, 26);
+//        add(btnCancel);
+//
+//        btnSimpan.setBounds(254, 298, 100, 26);
+//        add(btnSimpan);
+//
+//        btnEdit.setBounds(400, 298, 100, 26);
+//        add(btnEdit);
+//
+//        btnUpdate.setBounds(535, 298, 100, 26);
+//        add(btnUpdate);
+//
+//        btnDelete.setBounds(665, 298, 100, 26);
+//        add(btnDelete);
 
         btnClose.setBounds(800, 298, 100, 26);
         add(btnClose);
@@ -132,7 +132,7 @@ public class CustomerView extends ComponentView {
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(925, 550);
+        setSize(600, 550);
         setVisible(true);
 
     }
@@ -145,7 +145,7 @@ public class CustomerView extends ComponentView {
             tableModel.addRow(new Object[]{(i + 1), Data.customersArr.get(i).getNamaCustomer(), Data.customersArr.get(i).getNoHpCustomer(), Data.customersArr.get(i).getAlamatCustomer()});
         }
         tblUser.setModel(tableModel);
-        tblUserScroll.setBounds(400, 48, 500, 225);
+        tblUserScroll.setBounds(24, 48, 500, 225);
         add(tblUserScroll);
     }
 

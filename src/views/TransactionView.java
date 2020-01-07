@@ -10,6 +10,8 @@ import controllers.TransactionController;
 import data.Data;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JFrame;
@@ -44,7 +46,7 @@ public class TransactionView extends ComponentView {
     int totalAngsuran;
     float biayaAngsuran;
     float dpAngsuran;
-    float grandTotalAngsuran;
+    String grandTotalAngsuran;
 
     public TransactionView() {
 
@@ -168,9 +170,32 @@ public class TransactionView extends ComponentView {
             }
         });
 
-        etDpAngsuran.addActionListener(new ActionListener() {
+//        etDpAngsuran.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                int index = tblProperty.getSelectedRow();
+//                Property propertySelected = Data.propertyArr.get(index);
+//                String tenor = jcTotalAngsuran.getSelectedItem().toString();
+//                dpAngsuran = Float.valueOf(etDpAngsuran.getText());
+//                int angsuran = Integer.parseInt(tenor) * 12;
+//                biayaAngsuran = (propertySelected.getHargaProperty() - dpAngsuran) / angsuran;
+//                etBiayaAngsuran.setText(String.valueOf(biayaAngsuran));
+//            }
+//        });
+        
+        etDpAngsuran.addKeyListener(new KeyListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void keyTyped(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
                 int index = tblProperty.getSelectedRow();
                 Property propertySelected = Data.propertyArr.get(index);
                 String tenor = jcTotalAngsuran.getSelectedItem().toString();
@@ -279,7 +304,7 @@ public class TransactionView extends ComponentView {
             biayaAngsuran = Float.valueOf(biaya);
             String tenor = jcTotalAngsuran.getSelectedItem().toString();
             totalAngsuran = Integer.parseInt(tenor);
-            grandTotalAngsuran = Float.valueOf(grandTotal);
+            grandTotalAngsuran = grandTotal;
             Property property = Data.propertyArr.get(indexProperty);
             Staff staff = Data.staffLoggin;
             Customer customer = new Customer(id, nama, noHp, alamat, id, username, password);

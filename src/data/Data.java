@@ -27,6 +27,7 @@ public class Data {
     public static ArrayList<Property> propertyArr = new ArrayList<>();
     public static ArrayList<TypeProperty> typePropertyArr = new ArrayList<>();
     public static ArrayList<Transaction> transactionArr = new ArrayList<>();
+    public static ArrayList<Transaction> transactionDetailArr = new ArrayList<>();
     
     
 }

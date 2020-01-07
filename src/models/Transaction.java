@@ -18,9 +18,9 @@ public class Transaction {
     private float dpAngsuran ;
     private float biayaAngsuran;
     private int totalAngsuran;
-    private float grandTotalAngsuran;
+    private String grandTotalAngsuran;
 
-    public Transaction(int idTransaction, Staff staff, Customer customer, Property property, float dpAngsuran, float biayaAngsuran, int totalAngsuran, float grandTotalAngsuran) {
+    public Transaction(int idTransaction, Staff staff, Customer customer, Property property, float dpAngsuran, float biayaAngsuran, int totalAngsuran, String grandTotalAngsuran) {
         this.idTransaction = idTransaction;
         this.staff = staff;
         this.customer = customer;
@@ -89,11 +89,11 @@ public class Transaction {
         this.totalAngsuran = totalAngsuran;
     }
 
-    public float getGrandTotalAngsuran() {
+    public String getGrandTotalAngsuran() {
         return grandTotalAngsuran;
     }
 
-    public void setGrandTotalAngsuran(float grandTotalAngsuran) {
+    public void setGrandTotalAngsuran(String grandTotalAngsuran) {
         this.grandTotalAngsuran = grandTotalAngsuran;
     }
 
