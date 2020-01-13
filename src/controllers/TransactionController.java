@@ -5,7 +5,9 @@
  */
 package controllers;
 
+import java.util.ArrayList;
 import models.Transaction;
+import models.TransactionDetail;
 import services.TransactionService;
 
 /**
@@ -18,6 +20,18 @@ public class TransactionController extends MainController{
     
     public Transaction insert(Transaction transaction){
         return transactionService.insert(transaction);
+    }
+    
+    public TransactionDetail insertDetail(TransactionDetail transactionDetail){
+        return transactionService.insertDetail(transactionDetail);
+    }
+    
+    public Transaction getTransactionMember(){
+        return transactionService.getTransactionMember();
+    }
+    
+    public ArrayList<TransactionDetail> getTransactionDetailMember(int id){
+        return transactionService.getTransactionDetailMember(id);
     }
     
 }

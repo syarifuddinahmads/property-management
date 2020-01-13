@@ -74,6 +74,7 @@ public class MainView extends ComponentView{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 Data.isLoggedIn = false;
+                Data.userLoggin = null;
                 mainController.loginView();
             }
         });

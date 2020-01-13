@@ -5,7 +5,9 @@
  */
 package interfaces;
 
+import java.util.ArrayList;
 import models.Transaction;
+import models.TransactionDetail;
 
 /**
  *
@@ -14,5 +16,11 @@ import models.Transaction;
 public interface TransactionInterface {
  
     public Transaction insert(Transaction transaction);
+    
+    public TransactionDetail insertDetail(TransactionDetail transactionDetail);
+    
+    public Transaction getTransactionMember();
+    
+    public ArrayList<TransactionDetail> getTransactionDetailMember(int idTransaction);
     
 }

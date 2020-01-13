@@ -7,6 +7,7 @@ package views;
 
 import controllers.LoginController;
 import controllers.MainController;
+import data.Data;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -60,7 +61,12 @@ public class LoginView extends ComponentView {
                     if (user == null) {
                         JOptionPane.showMessageDialog(null, "Username & Password Salah !");
                     }else{
-                        mainController.mainView();
+                        Data.userLoggin = user;
+                        if (user.getType() == 1) {
+                            mainController.mainView();
+                        }else{
+                            mainController.memberPaymentView();
+                        }
                         etUsername.setText("");
                         etPassword.setText("");
                         setVisible(false);

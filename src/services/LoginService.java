@@ -23,22 +23,11 @@ public class LoginService implements LoginInterface{
             if (Data.usersArr.get(i).getUsername().toLowerCase().equals(username)) {
                 if (Data.usersArr.get(i).getPassword().toLowerCase().equals(password)) {
                     user = Data.usersArr.get(i);
-                    setStaffLogin(username, password);
                 }
             }
         }
         
         return user;
-    }
-    
-    public void setStaffLogin(String username, String password){
-        for (int i = 0; i < Data.usersArr.size(); i++) {
-            if (Data.staffArr.get(i).getUsername().toLowerCase().equals(username)) {
-                if (Data.staffArr.get(i).getPassword().toLowerCase().equals(password)) {
-                    Data.staffLoggin = Data.staffArr.get(i);
-                }
-            }
-        }
     }
     
 }

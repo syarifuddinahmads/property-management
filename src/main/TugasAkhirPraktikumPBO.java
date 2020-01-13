@@ -22,16 +22,15 @@ public class TugasAkhirPraktikumPBO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        mainController.injectDataUser();
-//        mainController.injectDataTypeProperty();
-//        boolean statusLogin = Data.isLoggedIn;
-//        if (statusLogin) {
-//            mainController.mainView();
-//        } else {
-//            mainController.loginView();
-//            mainController.transactionView();
-            MemberPaymentView member = new MemberPaymentView();
+        mainController.injectDataUser();
+        mainController.injectDataTypeProperty();
+        boolean statusLogin = Data.isLoggedIn;
+        if (statusLogin) {
+            mainController.mainView();
+        } else {
+            mainController.loginView();
         }
+//        mainController.memberPaymentView();
     }
 
-//}
+}

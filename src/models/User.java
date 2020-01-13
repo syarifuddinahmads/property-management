@@ -16,12 +16,6 @@ public class User {
     private String password;
     private int type;
 
-    public User(int id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
     public User(int id, String username, String password, int type) {
         this.id = id;
         this.username = username;
@@ -53,6 +47,11 @@ public class User {
         this.password = password;
     }
 
-    
-    
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }    
 }

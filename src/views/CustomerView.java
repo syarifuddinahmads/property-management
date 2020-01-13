@@ -76,7 +76,7 @@ public class CustomerView extends ComponentView {
 //        btnDelete.setBounds(665, 298, 100, 26);
 //        add(btnDelete);
 
-        btnClose.setBounds(800, 298, 100, 26);
+        btnClose.setBounds(440, 298, 100, 26);
         add(btnClose);
         
         initDataCustomer();
@@ -132,7 +132,7 @@ public class CustomerView extends ComponentView {
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 550);
+        setSize(575, 450);
         setVisible(true);
 
     }
@@ -145,7 +145,7 @@ public class CustomerView extends ComponentView {
             tableModel.addRow(new Object[]{(i + 1), Data.customersArr.get(i).getNamaCustomer(), Data.customersArr.get(i).getNoHpCustomer(), Data.customersArr.get(i).getAlamatCustomer()});
         }
         tblUser.setModel(tableModel);
-        tblUserScroll.setBounds(24, 48, 500, 225);
+        tblUserScroll.setBounds(24, 48, 525, 225);
         add(tblUserScroll);
     }
 

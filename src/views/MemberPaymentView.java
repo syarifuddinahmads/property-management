@@ -5,89 +5,135 @@
  */
 package views;
 
-import java.awt.Color;
+import controllers.TransactionController;
+import data.Data;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
+import models.Transaction;
+import models.TransactionDetail;
 
 /**
  *
  * @author udin
  */
-public class MemberPaymentView{
+public class MemberPaymentView {
+
     private JFrame frame = new JFrame();
     private JLabel textMember = new JLabel();
     private JTextField entry_Anggaran = new JTextField();
+    private JLabel angsuran_ke = new JLabel();
+    private JLabel jumlah_angsuran = new JLabel();
     private JTextField angka = new JTextField();
     private JButton bayarButton = new JButton("Bayar");
     private JTable table = new JTable();
     private JScrollPane scroll;
     private DefaultTableCellRenderer celRender;
     private JOptionPane message = new JOptionPane();
-    
-    public MemberPaymentView(){
-        this.textMember.setBounds(25, 50, 300, 25);
+    private JButton btnLogout = new JButton("Logout");
+    private TransactionController transactionController = new TransactionController();
+
+    private Transaction transaction;
+    private ArrayList<TransactionDetail> transactionDetails;
+    private int angsuranKe;
+    private float jumlahWajibBayar;
+
+    public MemberPaymentView() {
+
+        transaction = transactionController.getTransactionMember();
+        transactionDetails = transactionController.getTransactionDetailMember(transaction.getIdTransaction());
+
+        angsuranKe = transactionDetails.size() + 1;
+        jumlahWajibBayar = transaction.getBiayaAngsuran();
+
+        this.angka.setText(Integer.toString(angsuranKe));
+        this.entry_Anggaran.setText(Float.toString(jumlahWajibBayar));
+
+        this.textMember.setBounds(24, 24, 350, 18);
         this.textMember.setText("Member Payment View");
-        this.textMember.setFont(new Font("Times new roman", Font.BOLD, 26));
+        this.textMember.setFont(new Font("Times new roman", Font.BOLD, 18));
         this.frame.add(this.textMember);
-        
-        Border border = new EmptyBorder(5, 5, 5, 5);
-        this.entry_Anggaran.setBounds(25, 100, 150, 40);
-        this.entry_Anggaran.setText(""); //Set Text DataBase
-        this.entry_Anggaran.setFont(new Font("Arial", Font.CENTER_BASELINE, 16));
-        this.entry_Anggaran.setBorder(border);
-        this.frame.add(this.entry_Anggaran);
-        
-        this.angka.setBounds(240, 100, 100, 40);
-        this.angka.setText(""); // Set Text DataBase
-        this.angka.setFont(new Font("Arial", Font.CENTER_BASELINE, 16));
-        this.angka.setBorder(border);
+
+        this.angsuran_ke.setBounds(24, 70, 200, 25);
+        this.angsuran_ke.setText("Pembayaran Ke : ");
+        this.angsuran_ke.setFont(new Font("Consolas", Font.BOLD, 16));
+        this.frame.add(angsuran_ke);
+
+        this.angka.setBounds(200, 70, 100, 26);
+        this.angka.setEditable(false);
         this.frame.add(this.angka);
-        
-        this.bayarButton.setBounds(400, 100, 100, 40);
+
+        this.jumlah_angsuran.setBounds(24, 110, 200, 25);
+        this.jumlah_angsuran.setText("Jumlah Bayar : ");
+        this.jumlah_angsuran.setFont(new Font("Consolas", Font.BOLD, 16));
+        this.frame.add(jumlah_angsuran);
+
+        this.entry_Anggaran.setBounds(200, 110, 200, 26);
+        this.entry_Anggaran.setEditable(false);
+        this.frame.add(this.entry_Anggaran);
+
+        this.bayarButton.setBounds(200, 150, 100, 26);
+        this.frame.add(this.bayarButton);
+
         this.bayarButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent ae) {
-                MemberPaymentView.this.setMessage();
+            public void actionPerformed(ActionEvent e) {
+                String bayar = entry_Anggaran.getText();
+                if (bayar.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Masukkan jumlah pembayaran !");
+                } else {
+                    TransactionDetail detailAngsuran = new TransactionDetail(transaction.getIdTransaction(), angsuranKe, "", Float.toString(jumlahWajibBayar), 1);
+                    TransactionDetail detail = transactionController.insertDetail(detailAngsuran);
+                    if (detail != null) {
+                        JOptionPane.showMessageDialog(null, "Angsuran pembayaran anda berhasil ! ");
+                        setDataTransaction();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Angsuran pembayaran anda gagal ! ");
+                    }
+                }
             }
         });
-        this.frame.add(this.bayarButton);
-        
-        String[] colTable = {"Id", "Customer", "Tgl Pembayaran", "Status"};
-        DefaultTableModel tableModel = new DefaultTableModel(null, colTable);
-        tableModel.addRow(new Object[]{"1", "WKWKWK", "2019-09-08", "Lunas"});
-//        tableModel.getCo
-        this.table.setModel(tableModel);
-        this.table.getColumnModel().getColumn(0).setPreferredWidth(0);
-        this.celRender = new DefaultTableCellRenderer();
-        this.celRender.setHorizontalAlignment(JLabel.CENTER);
-        this.table.getColumnModel().getColumn(0).setCellRenderer(this.celRender);
-        this.scroll = new JScrollPane(this.table);
-        this.scroll.setBounds(120, 200, 700, 300);
-        this.frame.add(this.scroll);
-        
+
+        this.btnLogout.setBounds(425, 525, 100, 26);
+        this.frame.add(btnLogout);
+
+        this.btnLogout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                Data.isLoggedIn = false;
+                Data.userLoggin = null;
+                transactionController.loginView();
+            }
+        });
+
+        setDataTransaction();
+
         this.frame.setTitle("Member Payment View");
-        this.frame.setSize(1000, 700);
+        this.frame.setSize(550, 600);
         this.frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.frame.setLayout(null);
         this.frame.setVisible(true);
         this.frame.setLocationRelativeTo(null);
     }
-    public void setMessage(){
-        int a = this.message.showConfirmDialog(this.frame, "Are You Sure ?");
-        if (a==this.message.YES_OPTION){
-            System.out.println("YES");
+
+    public void setDataTransaction() {
+
+        String[] colTable = {"Id", "Tgl Pembayaran", "Total Bayar", "Status"};
+        DefaultTableModel tableModel = new DefaultTableModel(null, colTable);
+        tableModel.setRowCount(0);
+        for (int i = 0; i < Data.transactionDetailArr.size(); i++) {
+            tableModel.addRow(new Object[]{(i + 1), Data.transactionDetailArr.get(i).getDateTransaction(), Data.transactionDetailArr.get(i).getTotalPayment(), Data.transactionDetailArr.get(i).getStatus()});
         }
-//        this.message.showMessageDialog(this.frame, "Yakin Ingin Membayar", "");
+        this.table.setModel(tableModel);
+        this.scroll = new JScrollPane(this.table);
+        this.scroll.setBounds(24, 300, 500, 200);
+        this.frame.add(this.scroll);
     }
-    
+
 }

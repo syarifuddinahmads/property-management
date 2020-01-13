@@ -16,7 +16,7 @@ public class Customer extends User{
     private String alamatCustomer;
 
     public Customer(int idCustomer, String namaCustomer, String noHpCustomer, String alamatCustomer, int id, String username, String password) {
-        super(id, username, password);
+        super(id, username, password,0);
         this.idCustomer = idCustomer;
         this.namaCustomer = namaCustomer;
         this.noHpCustomer = noHpCustomer;

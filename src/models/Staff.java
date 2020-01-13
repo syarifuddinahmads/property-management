@@ -16,7 +16,7 @@ public class Staff extends User{
     private String alamatStaff;
 
     public Staff(int idStaff, String namaStaff, String noHpStaff, String alamatStaff, int id, String username, String password) {
-        super(id, username, password);
+        super(id, username, password,1);
         this.idStaff = idStaff;
         this.namaStaff = namaStaff;
         this.noHpStaff = noHpStaff;

@@ -25,7 +25,7 @@ public class StaffService implements StaffInterface {
     @Override
     public Staff insert(Staff staff) {
         Data.staffArr.add(staff);
-        User user = new User((Data.usersArr.size()+1), staff.getUsername(),staff.getPassword());
+        User user = new User((Data.usersArr.size()+1), staff.getUsername(),staff.getPassword(),1);
         Data.usersArr.add(user);
         return staff;
     }

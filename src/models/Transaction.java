@@ -12,7 +12,7 @@ package models;
 public class Transaction {
     
     private int idTransaction;
-    private Staff staff;
+    private User user;
     private Customer customer;
     private Property property;
     private float dpAngsuran ;
@@ -20,9 +20,9 @@ public class Transaction {
     private int totalAngsuran;
     private String grandTotalAngsuran;
 
-    public Transaction(int idTransaction, Staff staff, Customer customer, Property property, float dpAngsuran, float biayaAngsuran, int totalAngsuran, String grandTotalAngsuran) {
+    public Transaction(int idTransaction, User user, Customer customer, Property property, float dpAngsuran, float biayaAngsuran, int totalAngsuran, String grandTotalAngsuran) {
         this.idTransaction = idTransaction;
-        this.staff = staff;
+        this.user = user;
         this.customer = customer;
         this.property = property;
         this.dpAngsuran = dpAngsuran;
@@ -30,8 +30,6 @@ public class Transaction {
         this.totalAngsuran = totalAngsuran;
         this.grandTotalAngsuran = grandTotalAngsuran;
     }
-
-       
 
     public int getIdTransaction() {
         return idTransaction;
@@ -41,12 +39,12 @@ public class Transaction {
         this.idTransaction = idTransaction;
     }
 
-    public Staff getStaff() {
-        return staff;
+    public User getUser() {
+        return user;
     }
 
-    public void setStaff(Staff staff) {
-        this.staff = staff;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Customer getCustomer() {

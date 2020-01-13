@@ -19,8 +19,9 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import models.Customer;
 import models.Property;
-import models.Staff;
 import models.Transaction;
+import models.TransactionDetail;
+import models.User;
 import static views.ComponentView.etBiayaAngsuran;
 import static views.ComponentView.etDpAngsuran;
 import static views.ComponentView.etHarga;
@@ -278,7 +279,9 @@ public class TransactionView extends ComponentView {
     public void saveTransaction() {
         nama = etName.getText();
         username = etUsername.getText();
-        password = etPassword.toString();
+        password = etPassword.getText();
+        
+        System.out.println("PASSWORD = "+password);
         noHp = etNoHp.getText();
         id = (Data.customersArr.size() + 1);
         alamat = etAlamat.getText();
@@ -306,10 +309,12 @@ public class TransactionView extends ComponentView {
             totalAngsuran = Integer.parseInt(tenor);
             grandTotalAngsuran = grandTotal;
             Property property = Data.propertyArr.get(indexProperty);
-            Staff staff = Data.staffLoggin;
+            User userLogin = Data.userLoggin; 
             Customer customer = new Customer(id, nama, noHp, alamat, id, username, password);
-            Transaction transaction = new Transaction((Data.transactionArr.size() + 1), staff, customer, property, dpAngsuran, biayaAngsuran, totalAngsuran, grandTotalAngsuran);
+            Transaction transaction = new Transaction((Data.transactionArr.size() + 1), userLogin, customer, property, dpAngsuran, biayaAngsuran, totalAngsuran, grandTotalAngsuran);
+            TransactionDetail transactionDetail= new TransactionDetail((Data.transactionArr.size() + 1), (Data.transactionDetailArr.size() +1), Float.toString(biayaAngsuran), "", 1);
             transactionController.insert(transaction);
+            transactionController.insertDetail(transactionDetail);
             customerController.insert(customer);
             resetFieldCustomer();
         }

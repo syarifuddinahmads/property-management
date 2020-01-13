@@ -10,6 +10,7 @@ import models.Customer;
 import models.Property;
 import models.Staff;
 import models.Transaction;
+import models.TransactionDetail;
 import models.TypeProperty;
 import models.User;
 
@@ -20,14 +21,14 @@ import models.User;
 public class Data {
     
     public static boolean isLoggedIn = false;
-    public static Staff staffLoggin = null;
+    public static User userLoggin = null;
     public static ArrayList<User> usersArr = new ArrayList<>();
     public static ArrayList<Customer> customersArr = new ArrayList<>();
     public static ArrayList<Staff> staffArr = new ArrayList<>();
     public static ArrayList<Property> propertyArr = new ArrayList<>();
     public static ArrayList<TypeProperty> typePropertyArr = new ArrayList<>();
     public static ArrayList<Transaction> transactionArr = new ArrayList<>();
-    public static ArrayList<Transaction> transactionDetailArr = new ArrayList<>();
+    public static ArrayList<TransactionDetail> transactionDetailArr = new ArrayList<>();
     
     
 }
