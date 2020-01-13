@@ -315,6 +315,8 @@ public class TransactionView extends ComponentView {
             transactionController.insertDetail(transactionDetail);
             customerController.insert(customer);
             resetFieldCustomer();
+            setVisible(false);
+            transactionController.mainView();
         }
     }
 }

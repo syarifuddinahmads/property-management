@@ -15,6 +15,7 @@ import javax.swing.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import models.Transaction;
 import models.TransactionDetail;
 
@@ -37,6 +38,7 @@ public class MemberPaymentView {
     private JOptionPane message = new JOptionPane();
     private JButton btnLogout = new JButton("Logout");
     private TransactionController transactionController = new TransactionController();
+    private DefaultTableModel tableModel;
 
     private Transaction transaction;
     private ArrayList<TransactionDetail> transactionDetails;
@@ -91,10 +93,11 @@ public class MemberPaymentView {
                     TransactionDetail detail = transactionController.insertDetail(detailAngsuran);
                     if (detail != null) {
                         JOptionPane.showMessageDialog(null, "Angsuran pembayaran anda berhasil ! ");
-                        setDataTransaction();
+                        frame.setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "Angsuran pembayaran anda gagal ! ");
                     }
+                    transactionController.memberPaymentView();
                 }
             }
         });
@@ -125,10 +128,10 @@ public class MemberPaymentView {
     public void setDataTransaction() {
 
         String[] colTable = {"Id", "Tgl Pembayaran", "Total Bayar", "Status"};
-        DefaultTableModel tableModel = new DefaultTableModel(null, colTable);
-        tableModel.setRowCount(0);
-        for (int i = 0; i < Data.transactionDetailArr.size(); i++) {
-            tableModel.addRow(new Object[]{(i + 1), Data.transactionDetailArr.get(i).getDateTransaction(), Data.transactionDetailArr.get(i).getTotalPayment(), Data.transactionDetailArr.get(i).getStatus()});
+        this.tableModel = new DefaultTableModel(null, colTable);
+        this.tableModel.setRowCount(0);
+        for (int i = 0; i < transactionDetails.size(); i++) {
+            this.tableModel.addRow(new Object[]{(i + 1), transactionDetails.get(i).getDateTransaction(), transactionDetails.get(i).getTotalPayment(), transactionDetails.get(i).getStatus()});
         }
         this.table.setModel(tableModel);
         this.scroll = new JScrollPane(this.table);
