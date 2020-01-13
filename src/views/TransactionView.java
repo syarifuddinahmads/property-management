@@ -107,12 +107,12 @@ public class TransactionView extends ComponentView {
         etDpAngsuran.setBounds(400, 400, 150, 26);
         add(etDpAngsuran);
 
-        lblGrandTotalAngsuran.setBounds(600, 370, 100, 26);
-        etGrandTotalAngsuran.setEditable(false);
-        add(lblGrandTotalAngsuran);
-
-        etGrandTotalAngsuran.setBounds(600, 400, 150, 26);
-        add(etGrandTotalAngsuran);
+//        lblGrandTotalAngsuran.setBounds(600, 370, 100, 26);
+//        etGrandTotalAngsuran.setEditable(false);
+//        add(lblGrandTotalAngsuran);
+//
+//        etGrandTotalAngsuran.setBounds(600, 400, 150, 26);
+//        add(etGrandTotalAngsuran);
 
         btnClose.setBounds(535, 475, 100, 26);
         add(btnClose);
@@ -280,8 +280,6 @@ public class TransactionView extends ComponentView {
         nama = etName.getText();
         username = etUsername.getText();
         password = etPassword.getText();
-        
-        System.out.println("PASSWORD = "+password);
         noHp = etNoHp.getText();
         id = (Data.customersArr.size() + 1);
         alamat = etAlamat.getText();
@@ -302,11 +300,11 @@ public class TransactionView extends ComponentView {
             JOptionPane.showMessageDialog(null, "Alamat wajib diisi !");
         } else if (indexProperty < 0) {
             JOptionPane.showMessageDialog(null, "Property belum dipilih !");
-        } else {
+        } else if(dp.equals("")){
+            JOptionPane.showMessageDialog(null, "Masukkan jumlah DP !");
+        }else{
             dpAngsuran = Float.valueOf(dp) ;
             biayaAngsuran = Float.valueOf(biaya);
-            String tenor = jcTotalAngsuran.getSelectedItem().toString();
-            totalAngsuran = Integer.parseInt(tenor);
             grandTotalAngsuran = grandTotal;
             Property property = Data.propertyArr.get(indexProperty);
             User userLogin = Data.userLoggin; 
